@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map, tap } from 'rxjs/operators';
 
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { map, tap } from 'rxjs/operators';
 
 const DB_URL = 'https://ng-course-recipe-book-91a88-default-rtdb.europe-west1.firebasedatabase.app';
 
@@ -11,7 +11,7 @@ const DB_URL = 'https://ng-course-recipe-book-91a88-default-rtdb.europe-west1.fi
 export class DataStorageService {
   constructor(
     private http: HttpClient,
-    private recipeService: RecipeService,
+    private recipeService: RecipeService
   ) { }
 
   storeRecipes() {
